@@ -39,7 +39,6 @@ async function getGameData() {
         const teamNames = $(element).find(".team-name").map((index, el) => $(el).text().trim()).get();
         const matchStart = $(element).find(".match-info-hora").text().trim();
         const joinedTeamNames = teamNames.join(" vs ").trim();
-        console.log(joinedTeamNames);
         scrapedMatches.push({ teamNames: joinedTeamNames, matchStart });
     });
 
