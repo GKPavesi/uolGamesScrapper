@@ -2,7 +2,7 @@ import React from 'react';
 import * as cheerio from 'cheerio';
 
 async function MatchesPage() {
-    const matches = await getServerSideProps()
+    const matches = await getGameData()
     return (
         <div>
             <h1>Matches</h1>
@@ -18,7 +18,7 @@ async function MatchesPage() {
     );
 }
 
-export async function getServerSideProps() {
+export async function getGameData() {
     const response = await fetch(
         "https://www.uol.com.br/esporte/futebol/central-de-jogos/",
         {
