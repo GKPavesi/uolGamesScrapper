@@ -1,7 +1,7 @@
 import React from 'react';
 import * as cheerio from 'cheerio';
 
-async function MatchesPage() {
+async function Homepage() {
     const matches = await getGameData()
     return (
         <div>
@@ -18,7 +18,7 @@ async function MatchesPage() {
     );
 }
 
-export async function getGameData() {
+async function getGameData() {
     const response = await fetch(
         "https://www.uol.com.br/esporte/futebol/central-de-jogos/",
         {
@@ -32,7 +32,7 @@ export async function getGameData() {
 
     const $ = cheerio.load(html);
 
-    const date = "17/06";
+    const date = "18/06";
     const scrapedMatches = [];
 
     $(`.match-wrapper[data-cfg*='${date}']`).each((index, element) => {
@@ -46,4 +46,4 @@ export async function getGameData() {
     return scrapedMatches
 }
 
-export default MatchesPage;
+export default Homepage;
