@@ -32,7 +32,7 @@ async function getGameData() {
 
     const $ = cheerio.load(html);
 
-    const date = "18/06";
+    const date = "27/06";
     const scrapedMatches = [];
 
     $(`.match-wrapper[data-cfg*='${date}']`).each((index, element) => {
