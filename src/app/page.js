@@ -5,7 +5,7 @@ async function Homepage() {
     const matches = await getGameData()
     return (
         <div>
-            <h1>Matches</h1>
+            <h1>Matches Teste Uol</h1>
             <br/>
             {matches.map((element, index) => (
                 <div key={index}>
